@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorization Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <h1 class="text-3xl font-bold mb-8">Colorization Results</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+            <h2 class="text-xl font-semibold mb-4">Uploaded Image</h2>
+            <img src="{{ url_for('static', filename='real_color.png') }}" alt="Ground Truth Color Image" class="border rounded shadow">
+        </div>
+        <div class="text-center">
+            <h2 class="text-xl font-semibold mb-4">Grayscale Image (L Channel)</h2>
+            <img src="{{ url_for('static', filename='grayscale.png') }}" alt="Grayscale Image" class="border rounded shadow">
+        </div>
+        <div class="text-center">
+            <h2 class="text-xl font-semibold mb-4">Generated Color Image</h2>
+            <img src="{{ url_for('static', filename='fake_color.png') }}" alt="Generated Color Image" class="border rounded shadow">
+        </div>
+    </div>
+    <a href="/" class="mt-8 p-2 bg-green-500 text-white rounded cursor-pointer hover:bg-green-600">Upload Another Image</a>
+</body>
+</html>
